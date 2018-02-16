@@ -61,28 +61,29 @@ window.onload = function() {
   //***************************************************************************
 
   var Planet = Object.create(SpaceObject);
-  Planet.initPlanet = function(type, revAroundSun, rings) {
+  Planet.initPlanet = function(type, revAroundSun, rings, moons) {
     this.type = type;
     this.revAroundSun = revAroundSun;
     this.rings = rings;
+    this.moons = moons;
   };
 
   var mercury = Object.create(Planet);
   mercury.initSpaceObjectInfo("Mercury", 0.38, 0.62, 4878, "unknown", 169, 0.05, 58, 0.37, "");
-  mercury.initSpaceObjectOnCanvas(sun.posX + mercury.distSun * 100, sun.posY, mercury.sizeKm / 2500, "grey");
-  mercury.initPlanet("Rock", 88, false);
+  mercury.initSpaceObjectOnCanvas(sun.posX + sun.sizePx / 2 + mercury.distSun * 100, sun.posY, mercury.sizeKm / 2500, "grey");
+  mercury.initPlanet("Rock", 88, false, 0);
   mercury.construct();
 
   var venus = Object.create(Planet);
   venus.initSpaceObjectInfo("Venus", 0.72, 0.28, 12102, "unknown", 462, 0.81, 243, 0.90, "unknown");
-  venus.initSpaceObjectOnCanvas(sun.posX + venus.distSun * 100, sun.posY, venus.sizeKm / 2500, "brown");
-  venus.initPlanet("Rock", 225, false);
+  venus.initSpaceObjectOnCanvas(sun.posX + sun.sizePx / 2 + venus.distSun * 100, sun.posY, venus.sizeKm / 2500, "brown");
+  venus.initPlanet("Rock", 225, false, 0);
   venus.construct();
 
   var earth = Object.create(Planet);
   earth.initSpaceObjectInfo("Earth", 1, 0, 12756, "unknown", 15, 1, 1, 1, "Water");
-  earth.initSpaceObjectOnCanvas(sun.posX + earth.distSun * 100, sun.posY, earth.sizeKm / 2500, "blue");
-  earth.initPlanet("Rock", 365, false);
+  earth.initSpaceObjectOnCanvas(sun.posX + sun.sizePx / 2 + earth.distSun * 100, sun.posY, earth.sizeKm / 2500, "blue");
+  earth.initPlanet("Rock", 365, false, 1);
   earth.construct();
 
   //***************************************************************************
