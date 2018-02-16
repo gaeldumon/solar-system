@@ -1,0 +1,44 @@
+{
+  "Planets": {
+    "Mercury": {
+      "name": "Mercury",
+      "distSun": 0.38,
+      "distEarth": 0.62,
+      "sizeKm": 4878,
+      "coreTemp": 0,
+      "surfTemp": 169,
+      "mass": 0.05,
+      "rotation": 58,
+      "gravity": 0.37,
+      "compo": "Stuff",
+      "type":"Rock",
+      "revAroundSun":88,
+      "rings":false,
+      "moons":0,
+      "posX":"sun.posX + sun.sizePx/2 + mercury.distSun*100",
+      "posY":"sun.posY",
+      "sizePx":"mercury.sizeKm/2500",
+      "color":"lightgrey"
+    },
+    "Venus": {
+      "name": "Venus",
+      "distSun": 0.72,
+      "distEarth": 0.28,
+      "sizeKm": 12102,
+      "coreTemp": 0,
+      "surfTemp": 462,
+      "mass": 0.81,
+      "rotation": 243,
+      "gravity": 0.90,
+      "compo": "Stuff",
+      "type":"Rock",
+      "revAroundSun":225,
+      "rings":false,
+      "moons":0,
+      "posX":"sun.posX + sun.sizePx/2 + venus.distSun*100",
+      "posY":"sun.posY",
+      "sizePx":"venus.sizeKm/2500",
+      "color":"brown"
+    }
+  }
+}
