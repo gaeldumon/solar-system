@@ -1,0 +1,18 @@
+{
+  "sun": {
+    "name": "Sun",
+    "distSun": 0,
+    "distEarth": 1,
+    "sizeKm": 1392684,
+    "coreTemp": 15000000,
+    "surfTemp": 5476,
+    "mass": 318256,
+    "rotation": 25,
+    "gravity": 27.9,
+    "compo": "Stuff",
+    "posX": "canvas.width/2",
+    "posY": "canvas.height/2",
+    "sizePx": "30px",
+    "color": "yellow"
+  }
+}
