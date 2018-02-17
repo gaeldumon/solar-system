@@ -53,7 +53,9 @@
     "type": "Rock",
     "revAroundSun": 365,
     "rings": false,
-    "moons": 1,
+    "moons": {
+      "name": "The Moon"
+    },
     "posX": "sun.posX + sun.sizePx/2 + earth.distSun*100",
     "posY": "sun.posY",
     "sizePx": "earth.sizeKm/2500",
