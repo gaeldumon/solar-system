@@ -6,15 +6,37 @@ window.onload = function () {
   var context = canvas.getContext('2d');
 
   if (!canvas) {
-    alert("Impossible de récupérer le canvas");
+    alert("Impossible to get canvas");
     return;
   }
 
   if (!context) {
-    alert("Impossible de récupérer le context du canvas");
+    alert("Impossible to get canvas context");
     return;
   }
 
+  //***************************************************************************
+
+  function loadJSON(callback) {
+
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'planets.json', true);
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == 200) {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        callback(xobj.responseText);
+      }
+    };
+    xobj.send(null);
+  }
+
+  var mercury = function (response) {
+    var a = JSON.parse(response);
+    console.log(a.mercury);
+  }
+
+  loadJSON(mercury);
   //***************************************************************************
 
   // PROTOTYPE of planets, moons and sun :
