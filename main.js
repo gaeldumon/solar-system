@@ -44,7 +44,7 @@ window.onload = function () {
       /*Distance and size scales to adjust pure data to screen*/
       let smallPlanetsDistScale = 100;
       let smallPlanetsSizeScale = 2500;
-      let bigPlanetsDistScale = 50;
+      let bigPlanetsDistScale = 40;
       let bigPlanetsSizeScale = 7000;
 
       /*Type rock aka small planets and type gas aka big planets*/
