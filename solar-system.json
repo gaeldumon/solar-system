@@ -10,6 +10,7 @@
     "rotation": 25,
     "gravity": 27.9,
     "compo": "Stuff",
+    "revAroundSun": 0,
     "sizePx": 35,
     "color": "yellow"
   },
