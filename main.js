@@ -71,7 +71,6 @@ window.onload = function () {
           distScale = 40;
         }
       }
-
       obj2.posX = obj1.posX + (obj1.sizePx) + (obj2.distSun * distScale);
       obj2.posY = obj1.posY;
       obj2.sizePx = obj2.sizeKm / sizeScale;
