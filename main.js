@@ -24,7 +24,7 @@ window.onload = function () {
 
     var solarSystemData = JSON.parse(response);
 
-    // var myInterval = setInterval(animate, 1000 / 30);
+    var myInterval = setInterval(animate, 1000 / 30);
 
     /** We get sun object in solarSystemData
     Sun is centered in canvas so we declare its posX and posY HERE and not in JSON file cause JSON is text only */
@@ -45,13 +45,12 @@ window.onload = function () {
     var neptune = solarSystemData.neptune;
     var pluto = solarSystemData.pluto;
 
-    /** Initialize position and size of objects on canvas, obj1 is the BARYCENTER object (e.g sun)
+    /** init() initialize position and size of objects on canvas, obj1 is the BARYCENTER object (e.g sun)
     So obj2 (e.g a planet) position is RELATIVE to obj1 position */
 
-    function init(obj1, obj2) {
+    var init = function (obj1, obj2) {
 
       /* Adjusting scales to... scale object data (position and size) to screen, depending on type and names of planets */
-
       var distScale;
       var sizeScale;
 
@@ -78,14 +77,18 @@ window.onload = function () {
       obj2.sizePx = obj2.sizeKm / sizeScale;
     }
 
-    /** draw() Draws space objects (spheres) on canvas, it takes care of pathing, filling, and shaping */
+    /** draw() draws space objects (spheres) on canvas, it takes care of pathing, filling, and shaping */
 
-    function draw(obj) {
+    var draw = function (obj) {
       context.beginPath();
       context.fillStyle = obj.color;
       context.arc(obj.posX, obj.posY, obj.sizePx, 0, Math.PI * 2, true);
       context.fill();
       context.closePath();
+    }
+
+    var animate = function animate(obj1, obj2) {
+      context.clearRect(0, 0, canvas.width, canvas.height);
     }
 
     init(sun, mercury);
@@ -110,12 +113,13 @@ window.onload = function () {
     draw(pluto);
 
     /** A loop that goes through the whole JSON space objects data (solar-system.json parsed as object)
-    and init + draws every object (planets, sun)
-
+    and init + draws every object (planets, sun) */
+    /*
     for (var obj in solarSystemData) {
       init(sun, solarSystemData[obj]);
       draw(solarSystemData[obj]);
-    }*/
+    }
+    */
 
   });
 
