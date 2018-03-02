@@ -1,16 +1,17 @@
 window.onload = function () {
 
-  /**We get the canvas and his context (which is in 2D) in variables*/
+  /**We get the canvas and his ctx (which is in 2D) in variables*/
 
   var canvas = document.getElementById('solar-canvas');
-  var context = canvas.getContext('2d');
+  var ctx = canvas.getContext('2d');
+  var raf;
 
   if (!canvas) {
     alert("Impossible to get canvas");
     return;
   }
 
-  if (!context) {
+  if (!ctx) {
     alert("Impossible to get canvas context");
     return;
   }
@@ -24,9 +25,7 @@ window.onload = function () {
 
     var solarSystemData = JSON.parse(response);
 
-    var myInterval = setInterval(animate, 1000 / 30);
-
-    /** We get sun object in solarSystemData
+    /* We get sun object in solarSystemData
     Sun is centered in canvas so we declare its posX and posY HERE and not in JSON file cause JSON is text only */
 
     var sun = solarSystemData.sun;
@@ -76,20 +75,6 @@ window.onload = function () {
       obj2.sizePx = obj2.sizeKm / sizeScale;
     }
 
-    /** draw() draws space objects (spheres) on canvas, it takes care of pathing, filling, and shaping */
-
-    var draw = function (obj) {
-      context.beginPath();
-      context.fillStyle = obj.color;
-      context.arc(obj.posX, obj.posY, obj.sizePx, 0, Math.PI * 2, true);
-      context.fill();
-      context.closePath();
-    }
-
-    var animate = function animate(obj1, obj2) {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-    }
-
     init(sun, mercury);
     init(sun, venus);
     init(sun, earth);
@@ -100,26 +85,42 @@ window.onload = function () {
     init(sun, neptune);
     init(sun, pluto);
 
-    draw(sun);
-    draw(mercury);
-    draw(venus);
-    draw(earth);
-    draw(mars);
-    draw(jupiter);
-    draw(saturn);
-    draw(uranus);
-    draw(neptune);
-    draw(pluto);
+    /** draw() draws space objects (spheres) on canvas, it takes care of pathing, filling, and shaping */
+
+    var draw = function (obj) {
+      ctx.beginPath();
+      ctx.fillStyle = obj.color;
+      ctx.arc(obj.posX, obj.posY, obj.sizePx, 0, Math.PI * 2, true);
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    var angle = 0;
+    var da = 0.04;
+    var distSC;
+
+    var animate = function (obj) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      draw(sun);
+      draw(obj);
+
+      angle = angle + da;
+
+      obj.posX = sun.posX + (obj.distSun * 100 * Math.sin(angle));
+      obj.posY = sun.posY + (obj.distSun * 100 * Math.cos(angle));
+    }
+
+    var loopTimer = setInterval(function () {
+      animate(earth);
+    }, 1000 / 30);
 
     /** A loop that goes through the whole JSON space objects data (solar-system.json parsed as object)
     and init + draws every object (planets, sun) */
-    /*
-    for (var obj in solarSystemData) {
-      init(sun, solarSystemData[obj]);
-      draw(solarSystemData[obj]);
-    }
-    */
 
+    /*for (var obj in solarSystemData) {
+      init(sun, solarSystemData[obj]);
+    }*/
   });
 
 }
