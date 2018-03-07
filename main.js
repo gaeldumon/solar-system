@@ -47,9 +47,6 @@ window.onload = function () {
 
     /** draw() draws space objects (spheres) on canvas, it takes care of pathing, filling, and shaping */
     var drawPlanet = function (obj) {
-      obj.posX = sun.posX + sun.sizePx + obj.distSunPx;
-      obj.posY = sun.posY;
-
       ctx.beginPath();
       ctx.fillStyle = obj.color;
       ctx.arc(obj.posX, obj.posY, obj.sizePx, 0, Math.PI * 2, true);
@@ -58,7 +55,7 @@ window.onload = function () {
     }
 
     var angle = 0;
-    var da = 0.01;
+    var da = 0.07;
 
     var animate = function (obj) {
       obj = mercury;
@@ -66,15 +63,14 @@ window.onload = function () {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       drawSun();
-      drawPlanet(obj);
 
       angle = angle + da;
-      obj.posX = sun.posX + obj.distSun * 100 * Math.sin(angle);
-      obj.posY = sun.posY + obj.distSun * 100 * Math.cos(angle);
+      obj.posX = sun.posX + (sun.sizePx + obj.distSunPx) * Math.sin(angle);
+      obj.posY = sun.posY + (sun.sizePx + obj.distSunPx) * Math.cos(angle);
+      drawPlanet(obj);
 
       window.requestAnimationFrame(animate);
     }
-
     window.requestAnimationFrame(animate);
   });
 
