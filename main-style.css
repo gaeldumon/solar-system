@@ -1,0 +1,10 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+#solar-canvas {
+  margin-top: 25px;
+  background-color: black;
+}

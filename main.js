@@ -45,50 +45,50 @@ window.onload = function () {
     sun.posX = canvas.width / 2;
     sun.posY = canvas.height / 2;
 
-    var angleM = 0;
-    var angleV = 0;
-    var angleE = 0;
+    var angleMe = 0;
+    var angleVe = 0;
+    var angleEa = 0;
     var angleMa = 0;
-    var angleJ = 0;
-    var angleS = 0;
-    var angleU = 0;
-    var angleN = 0;
+    var angleJu = 0;
+    var angleSa = 0;
+    var angleUr = 0;
+    var angleNe = 0;
 
     var animate = function () {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       draw(sun);
 
-      angleM = angleM + mercury.revRatio;
-      mercury.posX = sun.posX + (sun.sizePx / 2 + mercury.sizePx / 2 + mercury.distSunPx + 10) * Math.sin(angleM);
-      mercury.posY = sun.posY + (sun.sizePx / 2 + mercury.sizePx / 2 + mercury.distSunPx + 10) * Math.cos(angleM);
+      angleMe = angleMe + mercury.revRatio;
+      mercury.posX = sun.posX + (sun.sizePx / 2 + mercury.sizePx / 2 + mercury.distSunPx + 10) * Math.sin(angleMe);
+      mercury.posY = sun.posY + (sun.sizePx / 2 + mercury.sizePx / 2 + mercury.distSunPx + 10) * Math.cos(angleMe);
 
-      angleV = angleV + venus.revRatio;
-      venus.posX = sun.posX + (sun.sizePx / 2 + venus.sizePx / 2 + venus.distSunPx + 10) * Math.sin(angleV);
-      venus.posY = sun.posY + (sun.sizePx / 2 + venus.sizePx / 2 + venus.distSunPx + 10) * Math.cos(angleV);
+      angleVe = angleVe + venus.revRatio;
+      venus.posX = sun.posX + (sun.sizePx / 2 + venus.sizePx / 2 + venus.distSunPx + 10) * Math.sin(angleVe);
+      venus.posY = sun.posY + (sun.sizePx / 2 + venus.sizePx / 2 + venus.distSunPx + 10) * Math.cos(angleVe);
 
-      angleE = angleE + earth.revRatio;
-      earth.posX = sun.posX + (sun.sizePx / 2 + earth.sizePx / 2 + earth.distSunPx + 10) * Math.sin(angleE);
-      earth.posY = sun.posY + (sun.sizePx / 2 + earth.sizePx / 2 + earth.distSunPx + 10) * Math.cos(angleE);
+      angleEa = angleEa + earth.revRatio;
+      earth.posX = sun.posX + (sun.sizePx / 2 + earth.sizePx / 2 + earth.distSunPx + 10) * Math.sin(angleEa);
+      earth.posY = sun.posY + (sun.sizePx / 2 + earth.sizePx / 2 + earth.distSunPx + 10) * Math.cos(angleEa);
 
       angleMa = angleMa + mars.revRatio;
       mars.posX = sun.posX + (sun.sizePx / 2 + mars.sizePx / 2 + mars.distSunPx + 10) * Math.sin(angleMa);
       mars.posY = sun.posY + (sun.sizePx / 2 + mars.sizePx / 2 + mars.distSunPx + 10) * Math.cos(angleMa);
 
-      angleJ = angleJ + jupiter.revRatio;
-      jupiter.posX = sun.posX + (sun.sizePx / 2 + jupiter.sizePx / 2 + jupiter.distSunPx + 10) * Math.sin(angleJ);
-      jupiter.posY = sun.posY + (sun.sizePx / 2 + jupiter.sizePx / 2 + jupiter.distSunPx + 10) * Math.cos(angleJ);
+      angleJu = angleJu + jupiter.revRatio;
+      jupiter.posX = sun.posX + (sun.sizePx / 2 + jupiter.sizePx / 2 + jupiter.distSunPx + 10) * Math.sin(angleJu);
+      jupiter.posY = sun.posY + (sun.sizePx / 2 + jupiter.sizePx / 2 + jupiter.distSunPx + 10) * Math.cos(angleJu);
 
-      angleS = angleS + saturn.revRatio;
-      saturn.posX = sun.posX + (sun.sizePx / 2 + saturn.sizePx / 2 + saturn.distSunPx + 10) * Math.sin(angleS);
-      saturn.posY = sun.posY + (sun.sizePx / 2 + saturn.sizePx / 2 + saturn.distSunPx + 10) * Math.cos(angleS);
+      angleSa = angleSa + saturn.revRatio;
+      saturn.posX = sun.posX + (sun.sizePx / 2 + saturn.sizePx / 2 + saturn.distSunPx + 10) * Math.sin(angleSa);
+      saturn.posY = sun.posY + (sun.sizePx / 2 + saturn.sizePx / 2 + saturn.distSunPx + 10) * Math.cos(angleSa);
 
-      angleU = angleU + uranus.revRatio;
-      uranus.posX = sun.posX + (sun.sizePx / 2 + uranus.sizePx / 2 + uranus.distSunPx + 10) * Math.sin(angleU);
-      uranus.posY = sun.posY + (sun.sizePx / 2 + uranus.sizePx / 2 + uranus.distSunPx + 10) * Math.cos(angleU);
+      angleUr = angleUr + uranus.revRatio;
+      uranus.posX = sun.posX + (sun.sizePx / 2 + uranus.sizePx / 2 + uranus.distSunPx + 10) * Math.sin(angleUr);
+      uranus.posY = sun.posY + (sun.sizePx / 2 + uranus.sizePx / 2 + uranus.distSunPx + 10) * Math.cos(angleUr);
 
-      angleN = angleN + neptune.revRatio;
-      neptune.posX = sun.posX + (sun.sizePx / 2 + neptune.sizePx / 2 + neptune.distSunPx + 10) * Math.sin(angleN);
-      neptune.posY = sun.posY + (sun.sizePx / 2 + neptune.sizePx / 2 + neptune.distSunPx + 10) * Math.cos(angleN);
+      angleNe = angleNe + neptune.revRatio;
+      neptune.posX = sun.posX + (sun.sizePx / 2 + neptune.sizePx / 2 + neptune.distSunPx + 10) * Math.sin(angleNe);
+      neptune.posY = sun.posY + (sun.sizePx / 2 + neptune.sizePx / 2 + neptune.distSunPx + 10) * Math.cos(angleNe);
 
       draw(mercury);
       draw(venus);
@@ -103,5 +103,4 @@ window.onload = function () {
     }
     window.requestAnimationFrame(animate);
   });
-
 }

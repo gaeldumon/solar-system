@@ -1,6 +1,7 @@
 {
   "sun": {
-    "name": "Sun",
+    "name": "sun",
+    "distSun": 0,
     "distEarth": 1,
     "sizeKm": 1392684,
     "sizePx": 40,
@@ -9,12 +10,14 @@
     "mass": 318256,
     "rotation": 25,
     "gravity": 27.9,
+    "revRatio": 0,
     "compo": "Stuff",
-    "color": "yellow"
+    "color": "#ffff1a"
   },
   "mercury": {
-    "name": "Mercury",
+    "name": "mercury",
     "distSun": 0.38,
+    "distSunKm": 56847190,
     "distSunPx": 19,
     "distEarth": 0.62,
     "sizeKm": 4878,
@@ -29,11 +32,12 @@
     "revRatio": 0.055,
     "rings": false,
     "moons": 0,
-    "color": "white"
+    "color": "#6D6D6D"
   },
   "venus": {
-    "name": "Venus",
+    "name": "venus",
     "distSun": 0.72,
+    "distSunKm": 107710466,
     "distSunPx": 36,
     "distEarth": 0.28,
     "sizeKm": 12102,
@@ -48,11 +52,12 @@
     "revRatio": 0.022,
     "rings": false,
     "moons": 0,
-    "color": "brown"
+    "color": "#DE5F25"
   },
   "earth": {
     "name": "Earth",
     "distSun": 1,
+    "distSunKm": 149597870,
     "distSunPx": 50,
     "distEarth": 0,
     "sizeKm": 12756,
@@ -67,11 +72,12 @@
     "revRatio": 0.013,
     "rings": false,
     "moons": 1,
-    "color": "blue"
+    "color": "#182A61"
   },
   "mars": {
     "name": "Mars",
     "distSun": 1.52,
+    "distSunKm": 227388762,
     "distSunPx": 76,
     "distEarth": 0.52,
     "sizeKm": 6792,
@@ -86,11 +92,12 @@
     "revRatio": 0.006,
     "rings": false,
     "moons": 2,
-    "color": "red"
+    "color": "#4C0B03"
   },
   "jupiter": {
     "name": "Jupiter",
     "distSun": 5.20,
+    "distSunKm": 777908924,
     "distSunPx": 130,
     "distEarth": 4.20,
     "sizeKm": 142984,
@@ -105,11 +112,12 @@
     "revRatio": 0.0015,
     "rings": false,
     "moons": 60,
-    "color": "orange"
+    "color": "#ff8533"
   },
   "saturn": {
     "name": "Saturn",
     "distSun": 9.53,
+    "distSunKm": 1425667701,
     "distSunPx": 476.5,
     "distEarth": 8.53,
     "sizeKm": 120636,
@@ -124,11 +132,12 @@
     "revRatio": 0.0010,
     "rings": true,
     "moons": 59,
-    "color": "tan"
+    "color": "#A88B6D"
   },
   "uranus": {
     "name": "Uranus",
     "distSun": 19.18,
+    "distSunKm": 2869287146,
     "distSunPx": 550,
     "distEarth": 18.14,
     "sizeKm": 51118,
@@ -143,11 +152,12 @@
     "revRatio": 0.0003,
     "rings": true,
     "moons": 5,
-    "color": "teal"
+    "color": "#9FC4CA"
   },
   "neptune": {
     "name": "Neptune",
     "distSun": 30,
+    "distSunKm": 4487936100,
     "distSunPx": 600,
     "distEarth": 29,
     "sizeKm": 49528,
@@ -162,6 +172,6 @@
     "revRatio": 0.0006,
     "rings": true,
     "moons": 2,
-    "color": "lightblue"
+    "color": "#3454DF"
   }
 }
