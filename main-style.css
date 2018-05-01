@@ -5,6 +5,6 @@ body {
 }
 
 #solar-canvas {
-  margin-top: 25px;
   background-color: black;
+  border: 0.5px solid grey;
 }
