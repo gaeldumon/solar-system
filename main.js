@@ -1,15 +1,13 @@
-window.onload = function () {
-
-  var canvas = document.getElementById('solar-canvas');
-  var ctx = canvas.getContext('2d');
-
-  if (!canvas) {
-    alert("Impossible to get canvas");
-    return;
+class Planet {
+  set(name) {
+    this.name = name;
   }
 
-  if (!ctx) {
-    alert("Impossible to get canvas context");
-    return;
+  get() {
+    console.log(this.name);
   }
 }
+
+let mercury = new Planet;
+mercury.set("mercury");
+mercury.get();
