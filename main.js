@@ -10,5 +10,5 @@ class Planet {
 
 let arr_planet = []; //just push planets into this array
 let mercury = new Planet;
-mercury.set("mercury");
+mercury.set("Mercury");
 mercury.get();
