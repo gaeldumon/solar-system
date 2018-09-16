@@ -1,4 +1,4 @@
-# solar-system
+# solarJS
 
 ## Future solar system in Javascript (Vanilla), in the browser, for educational and planet gazing purposes.
 
