@@ -1,6 +1,6 @@
 # solarJS
 
-## Future solar system in Javascript (Vanilla), in the browser, for educational and planet gazing purposes.
+## Future solar system in classic Javascript, in the browser, for educational and planet gazing purposes.
 
 Planets will orbit around Sun, and moons will orbit around their planets.
 
