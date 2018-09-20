@@ -13,7 +13,6 @@ window.onload = function () {
 }
 
 class SpaceObject {
-
   SpaceObject(name, color, posX, posY, sizePx) {
     this.name = name;
     this.color = color;
@@ -32,7 +31,6 @@ class SpaceObject {
 }
 
 class Planet extends SpaceObject {
-
   Planet(name, color, posX, posY, sizePx, orbitRatio, angle, distSun, distScale) {
     super(name, color, posX, posY, sizePx);
     this.orbitRatio = orbitRatio;
