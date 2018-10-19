@@ -56,10 +56,7 @@ window.onload = function () {
   let mercury = new Planet("Mercury", "white", 2, 59, sun.posX + this.distScale, canvas.height / 2, 0.055, 0);
   let venus = new Planet("Venus", "#DE5F25", 4.85, 90, sun.posX + this.distScale, canvas.height / 2, 0.022, 0);
 
-  let planets = [];
-
-  planets.push(mercury);
-  planets.push(venus);
+  let planets = [mercury, venus];
 
   var animate = function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
