@@ -2,7 +2,6 @@ body {
   display: flex;
   flex-direction: row;
   background-color: black;
-  border: 1px solid lime;
 }
 
 nav {
@@ -10,7 +9,6 @@ nav {
   width: 10%;
   color: white;
   font-family: 'Chakra Petch', sans-serif;
-  border: 1px solid pink;
 }
 
 nav p {
@@ -21,7 +19,11 @@ nav audio {
   width: 100%;
 }
 
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 #solar-canvas {
   background-color: black;
-  border: 1px solid red;
 }
