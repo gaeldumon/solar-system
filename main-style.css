@@ -1,29 +1,5 @@
+#solar-canvas {}
+
 body {
-  display: flex;
-  flex-direction: row;
-  background-color: black;
-}
-
-nav {
-  height: 100%;
-  width: 10%;
-  color: white;
-  font-family: 'Chakra Petch', sans-serif;
-}
-
-nav p {
-  text-align: center;
-}
-
-nav audio {
-  width: 100%;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#solar-canvas {
   background-color: black;
 }
