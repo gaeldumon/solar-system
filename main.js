@@ -63,8 +63,6 @@ window.onload = function () {
   let neptune = new Planet("Neptune", "#3454DF", 7.07, 450, sun.posX + this.distScale, canvas.height / 2, 0.0006, 0);
 
   let planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, neptune];
-  var display_earthPosX = document.getElementById("display_earthPosX");
-  var display_earthPosY = document.getElementById("display_earthPosY");
 
   var animate = function () {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -76,9 +74,6 @@ window.onload = function () {
       e.posY = sun.posY + e.distScale * Math.cos(e.angle);
       e.draw();
     });
-
-    display_earthPosX.innerHTML = Math.trunc(earth.posX);
-    display_earthPosY.innerHTML = Math.trunc(earth.posY);
 
     window.requestAnimationFrame(animate);
   }
