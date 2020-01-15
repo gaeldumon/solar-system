@@ -11,7 +11,7 @@ if (!context) {
 }
 
 class Astra {
-	constructor(name, color, radius, dist, angSpeed, parent) {
+	constructor(name, color, radius, dist, angSpeed, parent, rings = false) {
 		this.name = name;
 		this.color = color;
 		this.radius = radius;
@@ -21,6 +21,7 @@ class Astra {
 		this.x = this.parent.x + this.dist;
 		this.y = this.parent.y;
 		this.angle = 0;
+		this.rings = rings;
 	}
 
 	update() {
@@ -29,12 +30,30 @@ class Astra {
 		this.y = this.parent.y + this.dist * Math.cos(this.angle);
 	}
 
+	drawRing() {
+		context.fillStyle = '#ffffff';
+		context.beginPath();
+		context.ellipse(
+			this.x, 
+			this.y, 
+			this.radius+5, 
+			1, 
+			Math.PI * -0.15, 
+			0, 
+			Math.PI * 2, 
+			true
+		);
+		context.closePath();
+		context.fill();
+	}
+
 	draw() {
 		context.beginPath();
 		context.fillStyle = this.color;
 		context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
 		context.fill();
 		context.closePath();
+		if (this.rings) this.drawRing();
 	}
 }
 
@@ -63,11 +82,11 @@ let venus = new Astra("Venus", "#de5f25", 4.85, 90, 0.022, sun);
 let earth = new Astra("Earth", "blue", 5.10, 110, 0.013, sun);
 let mars = new Astra("Mars", "red", 3, 140, 0.006, sun);
 let jupiter = new Astra("Jupiter", "orange", 20.42, 220, 0.0015, sun);
-let saturn = new Astra("Saturn", "#a88b6d", 17.23, 320, 0.0010, sun);
+let saturn = new Astra("Saturn", "#a88b6d", 17.23, 320, 0.0010, sun, true);
 let uranus = new Astra("Uranus", "#9fc4ca", 7.30, 400, 0.0003, sun);
 let neptune = new Astra("Neptune", "#3454df", 7.07, 450, 0.0006, sun);
 
-let moon = new Astra('Moon', 'white', 1, 10, 0.08, earth);
+let moon = new Astra('Moon', 'white', 1, 10, 0.013, earth);
 
 let planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, neptune];
 let stars = [sun];
