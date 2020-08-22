@@ -1,5 +1,5 @@
 const canvas = document.getElementById('solar-canvas');
-const context = canvas.getContext('2d');
+const context = canvas.getContext('2d', {alpha: false});
 let stopUpdate;
 
 if (!canvas) {
@@ -80,8 +80,8 @@ class Planet extends SpaceObject {
 }
 
 class Moon extends Planet {
-	constructor(name, color, radius, dist, angSpeed, parent, rings = false) {
-		super(name, color, radius, dist, angSpeed, parent, rings = false);
+	constructor(name, color, radius, dist, angSpeed, parent) {
+		super(name, color, radius, dist, angSpeed, parent);
 	}
 
 	update() {
