@@ -14,14 +14,23 @@ class SpaceObject {
         this.radius = radius;
         this.x = x;
         this.y = y;
-    }
+	}
+	
+	drawName() {
+		context.font = "14px monospace";
+		context.fillStyle = "#ffffff";
+		context.textAlign = "center";
+		context.fillText(this.name, this.x, this.y - this.radius - 5);
+	}
 
     draw() {
+		this.drawName();
+		
         context.beginPath();
         context.fillStyle = this.color;
         context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
         context.fill();
-        context.closePath();
+		context.closePath();
     }
 }
 
