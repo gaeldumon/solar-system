@@ -14,23 +14,23 @@ class SpaceObject {
         this.radius = radius;
         this.x = x;
         this.y = y;
-	}
-	
-	drawName() {
-		context.font = "14px monospace";
-		context.fillStyle = "#ffffff";
-		context.textAlign = "center";
-		context.fillText(this.name, this.x, this.y - this.radius - 5);
-	}
+    }
+
+    drawName() {
+        context.font = "14px monospace";
+        context.fillStyle = "#ffffff";
+        context.textAlign = "center";
+        context.fillText(this.name, this.x, this.y - this.radius - 5);
+    }
 
     draw() {
-		this.drawName();
-		
+        this.drawName();
+
         context.beginPath();
         context.fillStyle = this.color;
         context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
         context.fill();
-		context.closePath();
+        context.closePath();
     }
 }
 
@@ -70,7 +70,7 @@ class Planet extends SpaceObject {
             this.y,
             this.radius + 5,
             1,
-            Math.PI * -0.15,
+            Math.PI * -0.75,
             0,
             Math.PI * 2,
             true
@@ -79,9 +79,19 @@ class Planet extends SpaceObject {
         context.fill();
     }
 
+    drawOrbit() {
+        context.beginPath();
+        context.arc(this.parent.x, this.parent.y, this.dist, 0, Math.PI * 2, true);
+        context.lineWidth = 0.5;
+        context.strokeStyle = "white";
+        context.stroke();
+        context.closePath();
+    }
+
     draw() {
         super.draw();
         if (this.rings) this.drawRing();
+        this.drawOrbit()
     }
 }
 
